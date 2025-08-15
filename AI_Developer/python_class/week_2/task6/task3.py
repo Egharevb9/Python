@@ -1,0 +1,6 @@
+seat_numbber = set(range(1,51))
+print(f"{seat_numbber}")
+book_seat = int(input("please  book a seat by entering a number: "))
+print(f"you have booked number {book_seat}")
+seat_numbber.remove(book_seat)
+print(seat_numbber)
