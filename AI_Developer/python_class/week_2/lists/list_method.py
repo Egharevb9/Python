@@ -43,3 +43,37 @@ print(fruits)
 # Removes all elements from the list
 fruits = ["apple", "banana", "cherry"]
 fruits.clear()
+print(fruits)
+
+# dot index() method
+# Returns the index of the first occurrence of a value.
+fruits = ["apple","banana", "cherry"]
+position = fruits.index("banana")
+print(position)
+
+# dot count() method
+# Counts how many times a value appears.
+fruits = ["apple", "banana", "cherry", "banana"]
+print(fruits.count("banana"))
+
+#  dot sort() method
+# Sorts the list in ascending order (default).
+numbers = [3, 1, 4, 2]
+numbers.sort()
+print(numbers)
+
+# descending order
+numbers.sort(reverse=True)
+print(numbers)
+
+# dot reverse() method
+# Reverses the order of the list.
+fruits = ["apple", "banana", "cherry"]
+fruits.reverse()
+print(fruits)
+
+# copy()
+# Returns a shallow copy of the list(This should be familiar already)
+fruits = ["apple", "banana", "cherry"]
+new_list =fruits.copy()
+print(new_list)
