@@ -246,147 +246,380 @@
 
 
 
-def greet():
-    print("Hello, welcome to AI Fellowship!")
+# def greet():
+#     print("Hello, welcome to AI Fellowship!")
 
-# When you want to use a function, this is how to call it.
-# And you can call it as many times as possible.
-greet()
-greet()
-greet()
+# # When you want to use a function, this is how to call it.
+# # And you can call it as many times as possible.
+# greet()
+# greet()
+# greet()
 
-# Function Arguments and Parameters
-# Arguments are variables you add inside the function parenthesis when defining the function (placeholders). Sometimes, they can be optional.
-# Parameters are the actual values you pass inside the function parenthesis when calling the function.
-
-
-# Function with an argument - the placeholder
-def greet (name):
-    print("hello", name, "welcome to python learning! ")
-
-# calling with parameter - the actual name
-greet("class rep")
-greet("Ridwan")
-greet("esther")
+# # Function Arguments and Parameters
+# # Arguments are variables you add inside the function parenthesis when defining the function (placeholders). Sometimes, they can be optional.
+# # Parameters are the actual values you pass inside the function parenthesis when calling the function.
 
 
-# When to Use return, print(), and yield keywords inside a function
-# a. print()
-#  - You can use it if you are just interested in displaying your output (Not Storing). It does not give back a value you can use later.
-#  - Think of it like shouting information out loud, but not recording it for reference purpose.
-#  - So you use it when you just want to show results to the user.  Example: printing menus, reports, or logs.
+# # Function with an argument - the placeholder
+# def greet (name):
+#     print("hello", name, "welcome to python learning! ")
 
-def greet(name):
-    print("Hello", name)
-
-    # function call
-    result = greet("Esther")
-
-    # you will notice that it did not store the name
-    print("Result:", result)
+# # calling with parameter - the actual name
+# greet("class rep")
+# greet("Ridwan")
+# greet("esther")
 
 
-#    b. return** 
-#  You can use it if you want to give back a value.
-#  return` sends a value back to the function caller.
+# # When to Use return, print(), and yield keywords inside a function
+# # a. print()
+# #  - You can use it if you are just interested in displaying your output (Not Storing). It does not give back a value you can use later.
+# #  - Think of it like shouting information out loud, but not recording it for reference purpose.
+# #  - So you use it when you just want to show results to the user.  Example: printing menus, reports, or logs.
 
-#  The function ends immediately once it hits return.
+# def greet(name):
+#     print("Hello", name)
 
-#  Think of it like filling a form and handing it back, the caller now owns the result and can reuse it.
+#     # function call
+#     result = greet("Esther")
 
-#  So you can use `return` when you need the result for further computation or storage.For example, math calculations, data processing, formatting text.
-
-def add(a, b):
-    return a + b
-# function call
-
-result = add(4, 6)
-print("the sum is :", result)
-
-# Note the output and compare it with that of print()
+#     # you will notice that it did not store the name
+#     print("Result:", result)
 
 
-#  yield
-#  – This is used for  producing a Sequence (Generators)
-#  - yield works like return, but instead of ending the function, it pauses it and remembers its state.
-#  - Next time you call it, it resumes from where it stopped.
-#  - This creates a generator. 
-#  - You can use it when working with large data or infinite sequences. 
+# #    b. return** 
+# #  You can use it if you want to give back a value.
+# #  return` sends a value back to the function caller.
 
-def count_up_to(n):
-    i = 1
-    while i <= n:
-        yield i
-        i += 1
-    #  using the generator
-for number in count_up_to(95):
-        print(number) 
-        # Note the output: Instead of giving all numbers at once, the function yields them one at a time.
-        # 
-        #  
-# More on Function Arguments(Types of Arguments)
-# - Functions can accept different types of arguments depending on how we want to pass data. Understanding these makes functions flexible and powerful.
+# #  The function ends immediately once it hits return.
+
+# #  Think of it like filling a form and handing it back, the caller now owns the result and can reuse it.
+
+# #  So you can use `return` when you need the result for further computation or storage.For example, math calculations, data processing, formatting text.
+
+# def add(a, b):
+#     return a + b
+# # function call
+
+# result = add(4, 6)
+# print("the sum is :", result)
+
+# # Note the output and compare it with that of print()
 
 
-#  Positional Arguments
-# - These are the most common.
+# #  yield
+# #  – This is used for  producing a Sequence (Generators)
+# #  - yield works like return, but instead of ending the function, it pauses it and remembers its state.
+# #  - Next time you call it, it resumes from where it stopped.
+# #  - This creates a generator. 
+# #  - You can use it when working with large data or infinite sequences. 
 
-# - The order matters: values are assigned to parameters in the same order as they appear.
+# def count_up_to(n):
+#     i = 1
+#     while i <= n:
+#         yield i
+#         i += 1
+#     #  using the generator
+# for number in count_up_to(95):
+#         print(number) 
+#         # Note the output: Instead of giving all numbers at once, the function yields them one at a time.
+#         # 
+#         #  
+# # More on Function Arguments(Types of Arguments)
+# # - Functions can accept different types of arguments depending on how we want to pass data. Understanding these makes functions flexible and powerful.
 
-# - Think of it like lining up children in the same order as roll call.
+
+# #  Positional Arguments
+# # - These are the most common.
+
+# # - The order matters: values are assigned to parameters in the same order as they appear.
+
+# # - Think of it like lining up children in the same order as roll call.
 
 
-def  introduce(name, track):
-     print("My name is ", name)
-     print("I am learning", track, ".")
-# function Call
-introduce("esther", "AI DEVELOER")   #correct order
-# Change the arrangement and watch the output
-introduce("AI Engineering", "Ngozi") #incorrect order , this will throw a semantic error
+# def  introduce(name, track):
+#      print("My name is ", name)
+#      print("I am learning", track, ".")
+# # function Call
+# introduce("esther", "AI DEVELOER")   #correct order
+# # Change the arrangement and watch the output
+# introduce("AI Engineering", "Ngozi") #incorrect order , this will throw a semantic error
 
 
-# . Keyword Arguments
+# # . Keyword Arguments
 
-# - Here, you explicitly mention the parameter name when calling the function.
+# # - Here, you explicitly mention the parameter name when calling the function.
 
-# - Order doesn’t matter, since Python knows which value goes where.
+# # - Order doesn’t matter, since Python knows which value goes where.
 
-# - Think of it like addressing an envelope by name instead of position in line.
+# # - Think of it like addressing an envelope by name instead of position in line.
 
-def introduce(name, track):
-        print("My name is ",name)
-        print("I am learning", track,".")
-        # function call
-introduce(name = "Ngozi", track = "AI Engineering")
+# def introduce(name, track):
+#         print("My name is ",name)
+#         print("I am learning", track,".")
+#         # function call
+# introduce(name = "Ngozi", track = "AI Engineering")
 
-# Change the arrangment and watch the output
+# # Change the arrangment and watch the output
 
-introduce(track = "AI Engineering",name = "Ngozi")   # HEre you notice that order does not batter
+# introduce(track = "AI Engineering",name = "Ngozi")   # HEre you notice that order does not batter
 
-# Default Arguments
-# - HERe, you can give parameters a default value.
+# # Default Arguments
+# # - HERe, you can give parameters a default value.
 
-#  - Even if no value is provided when calling, the default is used.
+# #  - Even if no value is provided when calling, the default is used.
 
-#  - Think of it like a restaurant menu where rice is served by default if you don’t choose otherwise.
+# #  - Think of it like a restaurant menu where rice is served by default if you don’t choose otherwise.
 
-def introduce(name,track = "AI Engineering"):
-     print("My name is", name)
-     print("I am learning", track, ".")
-# function call
-# Without specifying the default argument, but watch the ouput 
-introduce("paul")    
-introduce("Tunji paul", track= "AI Development")   
+# def introduce(name,track = "AI Engineering"):
+#      print("My name is", name)
+#      print("I am learning", track, ".")
+# # function call
+# # Without specifying the default argument, but watch the ouput 
+# introduce("paul")    
+# introduce("Tunji paul", track= "AI Development")   
 
-# Varying Length Arguments
+# # Varying Length Arguments
 
-# - Sometimes we don’t know how many arguments will be passed. Python provides two special symbols(that is the asterisk)
+# # - Sometimes we don’t know how many arguments will be passed. Python provides two special symbols(that is the asterisk)
 
-#  - single asterisk for non-keyword arguments or tuple(*args)
-#  - Double asterisk for keyword arguments or dictionary(**kwargs)
+# #  - single asterisk for non-keyword arguments or tuple(*args)
+# #  - Double asterisk for keyword arguments or dictionary(**kwargs)
 
-#  non-keyword (tuple)
+# #  non-keyword (tuple)
 
-# - Collects extra positional arguments into a tuple.
+# # - Collects extra positional arguments into a tuple.
 
-# - Think of it like packing extra clothes into a bag.
+# # - Think of it like packing extra clothes into a bag.
+# def add_numbers(*args):
+#     total = 0
+#     for num in args:
+#         total += num
+#     print("sum:", total)
+
+# #function call
+# #take note of the output
+# add_numbers(2, 4, 6)
+# add_numbers(10, 20, 30, 40, 50)
+
+
+# # keyword argument (dictionary)
+
+# # - Collects extra keyword arguments into a dictionary.
+
+# # - Think of it like a labeled container where each item has a name tag.
+
+# def student_details(**kwargs):
+#      for key,value in kwargs.items():
+#           print(key, ":", value)
+
+# # function call - take note of the output
+# student_details(name="peter", track = "AI Engineering", interest="Block chain")   
+
+
+# Lets implement on full code
+# define student profile function
+
+# Ensure to not the order of arrangement of the types of arguments used.
+# this is how to arrange it of you are using everything or some of the together
+
+# def participant_profile(name,age,track ="AI Developement" , *skills, **extra_info):
+#      """
+#      Generate a profile for a bootcamp participant using different types of arguments.
+#      """
+#      profile = f"\n--- Bootcamp participant profile ---\n"
+#      profile += f"name: {name}\n"
+#      profile += f"age: {age}\n"
+#      profile += f"track: {track}\n"
+
+#     # skills (from *args)  
+#      if skills:
+#         profile += "skills: " + " ,".join(skills) + "\n"
+#      else:   
+#         profile +="skills: not yet specified\n"
+# # Extra info (from **kwargs) 
+#      if extra_info:
+#          profile += "Additional info:\n"
+#          for key, value in extra_info.items():
+#              profile += f"-{key.capitalize()}: {value}\n"
+#      return profile  # Do you remember `return` and why it is used? We are using it so it can be reused in other places
+
+# #------------------- lets test ---------------
+# # example 1: using only positional arguments
+# print(participant_profile("peter",24))
+
+# # # Example 2: Adding keyword/default argument
+# print(participant_profile("Ridwan",29, track="AI Engineering"))
+
+             
+# # Example 3: Adding variable-length positional arguments (*args)
+# print(participant_profile("David", 27, "Data Science", "Python", "SQL", "Machine Learning"))
+
+# # Example 4: Adding variable-length keyword arguments (**kwargs)
+# print(participant_profile(
+#     "Sophia", 30 , "Cybersecurity",
+#     "Networking", "Ethical Hacking","python",
+#     interest="Blockchain", City="Shagamu", phone="08123456789"
+# ))
+
+# Namespaces and Scope
+
+# Namespace
+
+# - A namespace is like a “container” that holds names (variables, functions, objects) and maps them to the actual data stored in memory.
+
+# - Think of it as a dictionary where keys are names and values are objects.
+
+# - Python uses namespaces to avoid name conflicts.
+
+# - Lets imagine a company where different departments can have employees with the same name.
+
+#   - In the IT department, there may be a "Chris".
+
+#   - In the Training department, there may also be a "Chris".
+# - Both exist, but they are identified by their department (namespace), so there’s no confusion.
+
+
+# Types of Namespaces
+
+#  - 1. Built-in namespace -Provided by Python (e.g., len, print, list).
+
+#  - 2. Global namespace -Names defined at the top level of a script or module.
+
+#  - 3. Local namespace -Names created inside a function.
+
+
+
+# # Global  Namespace
+# employee = "General Employee"
+
+# def IT_department():
+#     # local Namespace inside IT_department
+#     employee = "Chris (IT)"
+#     print("Inside IT Department: ", employee)
+
+# def Training_department():
+#     # Local Namespace inside Training_department
+#     employee = "chris (Training)"
+#     print("Inside Training Department:" , employee)
+# print("In Global Namespace:", employee)   # Refers to global variable
+# IT_department()       # Uses local variable in IT
+# Training_department()    # Uses local variable in Training
+
+# Using a built-in namespace function
+print("length of 'python':", len("python"))
+
+# So 'Chris' can exist in more than one namespace without conflict.
+# Please, take your time to study the output carefully.
+
+# Scope
+
+# - Scope defines where in the code a name is accessible.
+# Python follows the *LEGB Rule* (order of search for a variable):
+
+# L – Local → Inside the current function.
+
+# E – Enclosing → Inside any enclosing function(s).
+
+# G – Global → At the top level of the script/module.
+
+# B – Built-in → Python’s built-in functions/objects.
+
+x = "global x"   # Global Namespace
+def outer():
+    x = "enclosing x" # enclosing Namespace
+    def inner():
+        x = "local x " #local Namespace
+        print("inside inner : ", x) # local win
+    inner()
+    print("Inside outer :", x) #Enclosing
+outer()
+print("In global:", x)  #global
+# Watch the output
+# Notice how Python searches in the order Local → Enclosing → Global → Built-in (LEGB).
+
+
+# global keyword
+# used in nested functions when you want to modify the variable from the enclosing scope (not global)
+
+
+
+# Global keyword
+# Used when you want to modify a global variable inside a function.
+x = 5
+def change_global():
+    global x
+    x = 10   # modifies the global x
+change_global()
+print(x)
+
+
+# nonlocal keyword
+#Used in nested functions when you want to modify the variable from the enclosing scope (not global).
+def outer():
+    x = "outer x"
+    def inner():
+        nonlocal x
+        x = "changed by inner"
+        print("Inside inner:", x)
+    inner()
+    print("Inside outer: ", x)
+
+    outer()
+    # Watch the output
+
+    # So understanding namespace and scope helps avoid name conflicts, makes modular code easier to read, and ensures functions and modules can work without interfering with each other.
+
+    # Lamda Function
+
+# - A lambda function is a small, anonymous function (no name) defined using the lambda keyword.
+
+# - It can have any number of arguments, but only one expression.
+
+# - The result of the expression is automatically returned.
+
+# This is the syntax
+# lambda arguments: expression
+
+
+# You use lambda;
+
+# - When you need a short, throwaway function(not reuseable).
+
+# - To avoid writing full def functions for small tasks.
+
+# - Used with functions like map(), filter(), sorted(), and reduce().
+
+
+# normal function
+def square(x):
+    return x ** 2
+
+# lambda function
+square_lambda = lambda x: x ** 2
+print(square(5))
+print(square_lambda(5))
+
+# Watch the output and note the difference
+
+
+# This one has more that one arguments.
+add = lambda a, b:  a + b
+print(add(3,7)) # output :10
+
+
+# Let us lambda to apply the square function to a list
+numbers = [1, 2, 3, 4]
+squares = list(map(lambda x: x**2, numbers))
+print(squares)
+
+
+# lets use lambda to filter even  even numbers
+numbers = [10, 15 ,20 ,25, 30]
+evens = list(filter(lambda x : x % 2 == 0, numbers))
+print(evens)
+
+# Lets use lambda to sort the tuple within a list.
+
+student = [("Ayo", 20), ("Bola",18), ("chika", 22)]
+# sort by age
+sorted_students = sorted()
