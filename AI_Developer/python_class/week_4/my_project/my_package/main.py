@@ -51,3 +51,11 @@ from my_project import string_utils
 # - Reusability – Functions/modules can be reused in other projects.
 
 # - Collaboration-friendly – Multiple developers can work on different parts.
+
+
+
+# Organizing a Python Project
+
+# A modular project is a way of organizing your code into separate files and folders, each responsible for a specific task.
+
+# - This makes the project easier to read, test, and maintain.
