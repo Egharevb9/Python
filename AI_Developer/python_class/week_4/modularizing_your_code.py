@@ -622,4 +622,17 @@ print(evens)
 
 student = [("Ayo", 20), ("Bola",18), ("chika", 22)]
 # sort by age
-sorted_students = sorted()
+sorted_students = sorted(student,key=lambda student: student[1])
+print(sorted_students)
+
+# Output: [('Bola', 18), ('Ayo', 20), ('Chika', 22)]
+
+students_sorted_descending = sorted(student, key=lambda student: student[1],reverse=True)
+print(students_sorted_descending)
+
+# Output: [('Chika', 22), ('Ayo', 20), ('Bola', 18)]
+
+students_sorted_alphabetically = sorted(student, key=lambda student: student[0])
+print(students_sorted_alphabetically)
+
+# Output: [('Ayo', 20), ('Bola', 18), ('Chika', 22)]
