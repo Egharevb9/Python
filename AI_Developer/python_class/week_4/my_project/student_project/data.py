@@ -1,7 +1,7 @@
 # data.py
-students =  []
-def add_student(name, track):
-    students.append({"name": name, "track": track})
+books =  []
+def add_book(title, author):
+    books.append({"title": title, "author": author, "available":True})
 
-def get_students():
-    return students    
+def get_books():
+    return books   

@@ -10,7 +10,7 @@ print(my_project.capitalize_text("python"))
 # OR import specific modules
 from my_project import string_utils
 
-# print(string_utils.reverse_text("hello"))
+print(string_utils.reverse_text("hello"))
 
 # Code reusability means writing code once and using it multiple times instead of rewriting it.
 
@@ -59,3 +59,15 @@ from my_project import string_utils
 # A modular project is a way of organizing your code into separate files and folders, each responsible for a specific task.
 
 # - This makes the project easier to read, test, and maintain.
+
+
+
+# Why Use Modular Structure?
+
+# - Separates concerns – Each file has one responsibility.
+
+# - Easier to debug – You can fix issues in one place without breaking others.
+
+# - Reusability – Functions/modules can be reused in other projects.
+
+# - Collaboration-friendly – Multiple developers can work on different parts.

@@ -1,3 +1,8 @@
+import json
+import os
+
+
+
 books = []
 
 def add_book(title, author):
@@ -6,39 +11,31 @@ def add_book(title, author):
 def get_books():
     return books
 
-# utils/helpers.py - this will handle helper functions
-
-def format_book(book):
-    status = "Availiable" if book["available"] else "Borrowed"
-    return f"{book['title']} by {book['author']} - {status}"
+file_path = "library_data.json"
+books = []
 
 
-# services/library.py - this will handle helper functions
-import my_data.data as data
+def load_books():
+    """load books from JSON file if it exists"""
+    global books
+    if os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            books = json.load(f)
+    else:
+        books= []
 
-def borrow_book(title):
-    for book in data.get_books():
-     if  book["title"].lower() == title.lower() and book["available"]:
-             book["available"] = False
-             return f"you have borrowed '{book['title']}'"
-     return  "Book not available"
-    
 
-# main.py - this will be our project entry point
+def save_books():
+    """save current books list to JSON file"""
+    with open(file_path, "W")as f:
+        json.dump(books,f, indent=4)
 
-from my_data import data
-from utils import  helpers
-from services import library
 
-# add some books
-data.add_book("python Basic", "John Doe")
-data.add_book("advanced python", "Jane smith")
+def add_book(title,author):
+    books.append({"title":title, "author":author, "available": True})
+    save_books()
 
-# Display all books
-print("library collection :")
-for b in my_data.get_books():
-    print(helpers.format_book(b))
+def get_books():
+    return    
 
- # Borrow a book
-print("\nBorrowing a book: ")
-print(library.borrow_book("python Basic")) 
+
